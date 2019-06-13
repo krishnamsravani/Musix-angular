@@ -1,0 +1,36 @@
+
+<hr>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome to my Muzix App</h1>
+    <p class="lead">Music in the soul can be heard by the universe
+    </p>
+     </div>
+
+     <form>
+      <div class="form-row">
+        <div id="mysearch" class="col-lg-3">
+          <input #text type="text" class="form-control" placeholder="Search music">
+        </div>
+          <button type="button" class="btn btn-primary" (click)="click(text.value)">Search</button>
+      
+</div>
+
+<div class="container-fluid">
+<h2>Latest Tracks</h2>
+<div class="container-fluid d-flex flex-wrap my-2">
+  <div class="card col-sm-12 col-md-4 col-lg-3" style="width: 18rem;" *ngFor="let music of arrayOfMusic">
+    
+    <div class="card-body">
+      <h5 class="card-title">Music Name : {{music.name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Artist : {{music.artist.name}}</li>
+    </ul>
+    <div class="card-body">
+       <button class="btn btn-outline-primary mx-2" (click)="addToWishList(music)">Add to wishlist</button> 
+    
+    </div>
+  </div>
+</div>
+</div>
